@@ -181,13 +181,17 @@
                     "enum": [12]
                 },
                 {"type": "string", "description": "variable name"},
-                {"type": "string", "description": "variable id"}
+                {"type": "string", "description": "variable id"},
+                {"type": "string", "description": "variable blockId"}
             ],
             "additionalItems": {
-                "type": "number"
+                "oneOf": [
+                    {"type": "number"},
+                    {"type": "string"}
+                ]
             },
             "minItems": 3,
-            "maxItems": 5
+            "maxItems": 6
         },
         "list_primitive": {
             "type": "array",
@@ -200,10 +204,13 @@
                 {"type": "string", "description": "list id"}
             ],
             "additionalItems": {
-                "type": "number"
+                "oneOf": [
+                    {"type": "number"},
+                    {"type": "string"}
+                ]
             },
             "minItems": 3,
-            "maxItems": 5
+            "maxItems": 6
         },
         "topLevelPrimitive": {
             "oneOf": [
