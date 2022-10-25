@@ -119,7 +119,7 @@
                     "items": {"$ref":"#/definitions/scalarVal"}
                 }
             ],
-            "additionalItems": false
+            "additionalItems": true
         },
         "broadcast_message": {
             "type": "string",
@@ -184,10 +184,13 @@
                 {"type": "string", "description": "variable id"}
             ],
             "additionalItems": {
-                "type": "number"
+                "oneOf": [
+                    {"type": "number"},
+                    {"type": "string"}
+                ]
             },
             "minItems": 3,
-            "maxItems": 5
+            "maxItems": 6
         },
         "list_primitive": {
             "type": "array",
@@ -200,10 +203,13 @@
                 {"type": "string", "description": "list id"}
             ],
             "additionalItems": {
-                "type": "number"
+                "oneOf": [
+                    {"type": "number"},
+                    {"type": "string"}
+                ]
             },
             "minItems": 3,
-            "maxItems": 5
+            "maxItems": 6
         },
         "topLevelPrimitive": {
             "oneOf": [
